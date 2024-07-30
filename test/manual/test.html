@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    An alert should be shown with the <code>{"name":"axios"}</code>
+
+</body>
+<script src="promise.js"></script>
+<script src="../../dist/axios.js"></script>
+<script>
+    axios.get('./fixture.json').then(function (response) {
+        console.log(response);
+        alert(JSON.stringify(response.data));
+        alert('response headers:\n\n' + JSON.stringify(response.headers));
+    }, function (err) { console.log(err) });
+</script>
+
+</html>
